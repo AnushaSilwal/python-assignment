@@ -1,14 +1,10 @@
-numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
-
-if len(numbers) == 0:
- max_value = None  
-else:
- max_value = numbers[0]  
- for number in numbers:
+def find_maximum(numbers):
+    max_value = numbers[0]
+    for number in numbers:
         if number > max_value:
-            max_value = number  
+            max_value = number
+    return max_value
 
-print("The maximum value in the list is:", max_value)
-
-#Enter numbers separated by spaces: 1 2 5 6
-#The maximum value in the list is: 6
+numbers = [int(x) for x in input("Enter numbers separated by spaces: ").split()]
+max_value = find_maximum(numbers)
+print(f"The maximum value in the list is: {max_value}")
